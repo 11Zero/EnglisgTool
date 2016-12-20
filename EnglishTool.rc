@@ -1,0 +1,245 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\EnglishTool.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\EnglishTool.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ENGLISHTOOL_DIALOG DIALOGEX 0, 0, 251, 97
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "EnglishTool"
+FONT 10, "宋体"
+BEGIN
+    EDITTEXT        IDC_EDIT_EN,7,19,76,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_CN,110,18,91,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "添加词库",IDOK,7,45,50,14
+    PUSHBUTTON      "随机提问",IDC_BTN_RANDOM,69,45,50,14
+    PUSHBUTTON      "提示中文",IDC_BTN_VIEW_CN,131,45,50,14
+    CONTROL         "",IDC_FRAME_MESSAGE,"Static",SS_WHITERECT,7,66,237,14
+    LTEXT           "English",IDC_STATIC,7,6,29,8
+    LTEXT           "Chinese",IDC_STATIC,110,6,29,8
+    PUSHBUTTON      "清空内容",IDC_BTN_CLC,194,45,50,14
+    CONTROL         "顺序",IDC_CHECK_ORDER,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,213,6,31,10
+    CONTROL         "自动",IDC_CHECK_AUTO,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,213,18,31,10
+    CONTROL         "释义",IDC_CHECK_VIEWCN,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,213,31,31,10
+END
+
+IDD_DIALOG_VERSION DIALOG DISCARDABLE  0, 0, 119, 49
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "版本"
+FONT 10, "宋体"
+BEGIN
+    LTEXT           "Version 1.1",IDC_STATIC,7,13,46,10
+    LTEXT           "2016 成田日上",IDC_STATIC,59,14,53,9
+    PUSHBUTTON      "确定",IDOK,31,28,50,14
+END
+
+IDD_DIALOG_HELP DIALOG DISCARDABLE  0, 0, 211, 89
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "帮助"
+FONT 10, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "关闭",IDOK,154,68,50,14
+    LTEXT           "添加词库按钮：输入框内英文为新词时，执行添加词库动作；输入框内英文为已在库单词时，执行更新词库动作，并要求二次确认输入更新内容方能生效",
+                    IDC_STATIC,7,20,197,25
+    LTEXT           "顺序选框：切换随机提问与顺序提问",IDC_STATIC,7,61,122,8
+    LTEXT           "自动选框：切换自动提问与手动提问，自动时间间隔1s",
+                    IDC_STATIC,7,49,197,8
+    LTEXT           "释义选框：切换是否显示释义",IDC_STATIC,7,73,102,9
+    LTEXT           "当前词库：研究生英语读写Unit1,Unit5,欢迎扩充词库共享",
+                    IDC_STATIC,7,7,197,9
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "EnglishTool Microsoft 基础类应用程序\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "EnglishTool\0"
+            VALUE "LegalCopyright", "版权所有 (C) 2016\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "EnglishTool.EXE\0"
+            VALUE "ProductName", "EnglishTool 应用程序\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ENGLISHTOOL_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 244
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 90
+    END
+
+    IDD_DIALOG_VERSION, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 112
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 42
+    END
+
+    IDD_DIALOG_HELP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 204
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 82
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU1 MENU DISCARDABLE 
+BEGIN
+    POPUP "关于"
+    BEGIN
+        MENUITEM "使用",                        IDC_HELP
+        MENUITEM "版本",                        IDC_VERSION
+    END
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\EnglishTool.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
