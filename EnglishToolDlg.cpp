@@ -59,6 +59,7 @@ void CEnglishToolDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialog::DoDataExchange(pDX);
 	//{{AFX_DATA_MAP(CEnglishToolDlg)
+	DDX_Control(pDX, IDC_SLIDER, m_slider);
 	DDX_Control(pDX, IDC_FRAME_MESSAGE, m_MsgPicture);
 	//}}AFX_DATA_MAP
 }
@@ -77,6 +78,7 @@ BEGIN_MESSAGE_MAP(CEnglishToolDlg, CDialog)
 	ON_WM_DESTROY()
 	ON_COMMAND(IDC_VERSION, OnVersion)
 	ON_COMMAND(IDC_HELP, OnHelp)
+	ON_WM_VSCROLL()
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
@@ -89,6 +91,9 @@ BOOL CEnglishToolDlg::OnInitDialog()
 	pMenu=new CMenu; 
     pMenu->LoadMenu(IDR_MENU1); 
     SetMenu(pMenu);
+	DelayTime=1000;
+	m_slider.SetRange(0,100);//设置滑动范围
+    m_slider.SetTicFreq(20);//每10个单位画一刻度
 	sprintf(En,"");
 	sprintf(Cn,"");
 	Checked=0;
@@ -236,7 +241,7 @@ void CEnglishToolDlg::OnBtnRandom()
 	}
 	else
 	{
-		srand((int)time(0));
+		srand((int)time(0)+RandomSel);
 		RandomSel=rand()%SelCount;
 	}
 	SelCount=0;	
@@ -247,7 +252,6 @@ void CEnglishToolDlg::OnBtnRandom()
 		GetDlgItem(IDC_EDIT_CN)->SetWindowText(Cn);
 	else
 		GetDlgItem(IDC_EDIT_CN)->SetWindowText("");
-	Invalidate();
 	//sqlcmd.Format("insert into dict1 (EN,CN) values ('%s','%s')",EditEnstr,EditCnstr);
 	//sprintf(pBuf,"%s",sqlcmd);
 	//sqlcmd = GB2312ToUTF8(pBuf);
@@ -285,7 +289,7 @@ void CEnglishToolDlg::SetBottomMessage(CString* str)
 		pDC->SelectObject(&font);
 		//CString MsgText = _T("");
 		//MsgText.Format("扫描时间间已修改为%dms",Delay_Time);//修复提醒消息刷新问题
-		pDC->SetTextColor(RGB(rand()%180,rand()%180,rand()%180));
+		pDC->SetTextColor(RGB(18,18,18));
 		pDC->TextOut(3,3,*str);
 		ReleaseDC(pDC);
 }
@@ -299,19 +303,32 @@ void CEnglishToolDlg::OnBtnClc()
 
 void CEnglishToolDlg::OnCheckOrder() 
 {
+	CString str="";
 	InOrder=!InOrder;
 	((CButton*)GetDlgItem(IDC_CHECK_ORDER))->SetCheck(InOrder);
+	if(InOrder)
+		str.Format("当前为顺序跳词");
+	else
+		str.Format("当前为随机跳词");
+	SetBottomMessage(&str);
 }
 
 void CEnglishToolDlg::OnCheckAuto() 
 {
+	CString str="";
 	if(IsAuto)
 	{
 		KillTimer(1);
+		str.Format("当前为手动跳词");
+		SetBottomMessage(&str);
 	}
 	else
 	{
-		SetTimer(1,1000,NULL);
+		if(DelayTime<1000)
+			DelayTime=1000;
+		SetTimer(1,DelayTime,NULL);
+		str.Format("当前为自动跳词");
+		SetBottomMessage(&str);
 	}
 	IsAuto=!IsAuto;
 	((CButton*)GetDlgItem(IDC_CHECK_AUTO))->SetCheck(IsAuto);
@@ -355,4 +372,24 @@ void CEnglishToolDlg::OnHelp()
 	Help dlg;
  	dlg.DoModal();
 	
+}
+
+
+void CEnglishToolDlg::OnVScroll(UINT nSBCode, UINT nPos, CScrollBar* pScrollBar) 
+{
+	// TODO: Add your message handler code here and/or call default
+     CSliderCtrl   *pSlidCtrl=(CSliderCtrl*)GetDlgItem(IDC_SLIDER);
+     DelayTime=(pSlidCtrl->GetPos())*50;//取得当前位置值 
+	 	CString str="";
+	str.Format("当前自动间隔%.2f秒",DelayTime/1000.0);
+	SetBottomMessage(&str);
+
+	 if(IsAuto)
+	 {
+		 KillTimer(1);
+	 	if(DelayTime<1000)
+			DelayTime=1000;
+		SetTimer(1,DelayTime,NULL);
+	 }
+	CDialog::OnVScroll(nSBCode, nPos, pScrollBar);
 }

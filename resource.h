@@ -16,6 +16,7 @@
 #define IDC_CHECK_ORDER                 1006
 #define IDC_CHECK_AUTO                  1007
 #define IDC_CHECK_VIEWCN                1008
+#define IDC_SLIDER                      1009
 #define IDC_HELP                        32771
 #define IDC_VERSION                     32772
 
@@ -25,7 +26,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        134
 #define _APS_NEXT_COMMAND_VALUE         32773
-#define _APS_NEXT_CONTROL_VALUE         1008
+#define _APS_NEXT_CONTROL_VALUE         1010
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif

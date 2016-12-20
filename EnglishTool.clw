@@ -2,7 +2,7 @@
 
 [General Info]
 Version=1
-LastClass=Help
+LastClass=CEnglishToolDlg
 LastTemplate=CDialog
 NewFileInclude1=#include "stdafx.h"
 NewFileInclude2=#include "EnglishTool.h"
@@ -12,11 +12,11 @@ Class1=CEnglishToolApp
 Class2=CEnglishToolDlg
 
 ResourceCount=5
-Resource2=IDD_ENGLISHTOOL_DIALOG
-Resource3=IDD_DIALOG_HELP
+Resource2=IDD_DIALOG_VERSION
+Resource3=IDD_ENGLISHTOOL_DIALOG
 Resource1=IDR_MAINFRAME
 Class3=Version
-Resource4=IDD_DIALOG_VERSION
+Resource4=IDD_DIALOG_HELP
 Class4=Help
 Resource5=IDR_MENU1
 
@@ -33,14 +33,14 @@ ImplementationFile=EnglishToolDlg.cpp
 Filter=D
 BaseClass=CDialog
 VirtualFilter=dWC
-LastObject=CEnglishToolDlg
+LastObject=IDC_SLIDER1
 
 
 
 [DLG:IDD_ENGLISHTOOL_DIALOG]
 Type=1
 Class=CEnglishToolDlg
-ControlCount=12
+ControlCount=13
 Control1=IDC_EDIT_EN,edit,1350631552
 Control2=IDC_EDIT_CN,edit,1350631552
 Control3=IDOK,button,1342242817
@@ -53,6 +53,7 @@ Control9=IDC_BTN_CLC,button,1342242816
 Control10=IDC_CHECK_ORDER,button,1342242819
 Control11=IDC_CHECK_AUTO,button,1342242819
 Control12=IDC_CHECK_VIEWCN,button,1342242819
+Control13=IDC_SLIDER,msctls_trackbar32,1342242855
 
 [MNU:IDR_MENU1]
 Type=1

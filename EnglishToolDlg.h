@@ -21,6 +21,7 @@ public:
 // Dialog Data
 	//{{AFX_DATA(CEnglishToolDlg)
 	enum { IDD = IDD_ENGLISHTOOL_DIALOG };
+	CSliderCtrl	m_slider;
 	CStatic	m_MsgPicture;
 	//}}AFX_DATA
 
@@ -32,6 +33,7 @@ public:
 
 // Implementation
 protected:
+	int DelayTime;
 	CMenu * pMenu;
 	HICON m_hIcon;
 	int InOrder;
@@ -53,6 +55,7 @@ protected:
 	afx_msg void OnDestroy();
 	afx_msg void OnVersion();
 	afx_msg void OnHelp();
+	afx_msg void OnVScroll(UINT nSBCode, UINT nPos, CScrollBar* pScrollBar);
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 };

@@ -81,20 +81,23 @@ CAPTION "EnglishTool"
 FONT 10, "宋体"
 BEGIN
     EDITTEXT        IDC_EDIT_EN,7,19,76,14,ES_AUTOHSCROLL
-    EDITTEXT        IDC_EDIT_CN,110,18,91,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_CN,101,18,91,14,ES_AUTOHSCROLL
     DEFPUSHBUTTON   "添加词库",IDOK,7,45,50,14
     PUSHBUTTON      "随机提问",IDC_BTN_RANDOM,69,45,50,14
     PUSHBUTTON      "提示中文",IDC_BTN_VIEW_CN,131,45,50,14
     CONTROL         "",IDC_FRAME_MESSAGE,"Static",SS_WHITERECT,7,66,237,14
     LTEXT           "English",IDC_STATIC,7,6,29,8
-    LTEXT           "Chinese",IDC_STATIC,110,6,29,8
+    LTEXT           "Chinese",IDC_STATIC,101,6,29,8
     PUSHBUTTON      "清空内容",IDC_BTN_CLC,194,45,50,14
     CONTROL         "顺序",IDC_CHECK_ORDER,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,213,6,31,10
+                    WS_TABSTOP,202,6,31,10
     CONTROL         "自动",IDC_CHECK_AUTO,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,213,18,31,10
+                    WS_TABSTOP,202,18,31,10
     CONTROL         "释义",IDC_CHECK_VIEWCN,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,213,31,31,10
+                    WS_TABSTOP,202,31,31,10
+    CONTROL         "Slider1",IDC_SLIDER,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_VERT | TBS_TOP | TBS_ENABLESELRANGE | WS_TABSTOP,233,
+                    6,11,36
 END
 
 IDD_DIALOG_VERSION DIALOG DISCARDABLE  0, 0, 119, 49
